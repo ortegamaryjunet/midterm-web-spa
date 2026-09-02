@@ -164,12 +164,11 @@ function Registration({addTrack}) {
             <div className="w-full max-w-2xl bg-white border-2 border-emerald-300 rounded-2xl p-10 shadow-xl">
 
                 <h1 className="text-center text-xl font-bold text-slate-900 mb-2">New Track Entry</h1>
-                <p className="text-center text-sm font-medium text-emerald-700 mb-8">Add a new track and keep your Spotify collection up to date.</p>
+                <p className="text-center text-sm font-medium text-emerald-700 mb-8">Add a new track and keep your Spotify collection up to date</p>
 
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
 
-                        {/* TRACK TITLE */}
                         <div>
                             <label className="block text-sm font-semibold text-slate-800 mb-2">Track Title</label>
 
@@ -177,7 +176,6 @@ function Registration({addTrack}) {
                             {errors.title && (<p className="text-red-500 text-xs mt-1">{errors.title}</p>)}
                         </div>
 
-                        {/* GENRE */}
                         <div>
                             <label className="block text-sm font-semibold text-slate-800 mb-2">Genre</label>
                             <select name="genre" value={form.genre} onChange={handleChange} onBlur={handleBlur} className="w-full rounded-lg bg-white border border-slate-300 px-3.5 py-2.5 text-sm text-slate-800 outline-none transition focus:ring-2 focus:ring-emerald-400/40 focus:border-emerald-400">
@@ -192,7 +190,6 @@ function Registration({addTrack}) {
                             {errors.genre && (<p className="text-red-500 text-xs mt-1">{errors.genre}</p>)}
                         </div>
 
-                        {/* ARTIST NAME */}
                         <div>
                             <label className="block text-sm font-semibold text-slate-800 mb-2">Artist Name</label>
 
@@ -200,7 +197,6 @@ function Registration({addTrack}) {
                             {errors.artist && (<p className="text-red-500 text-xs mt-1">{errors.artist}</p>)}
                         </div>
 
-                        {/* RATING */}
                         <div>
                             <label className="block text-sm font-semibold text-slate-800 mb-2">Rating/BPM</label>
 
@@ -208,7 +204,6 @@ function Registration({addTrack}) {
                             {errors.rating && (<p className="text-red-500 text-xs mt-1">{errors.rating}</p>)}
                         </div>
 
-                        {/* LABEL */}
                         <div>
                             <label className="block text-sm font-semibold text-slate-800 mb-2">Label Name</label>
 
@@ -216,7 +211,6 @@ function Registration({addTrack}) {
                             {errors.label && (<p className="text-red-500 text-xs mt-1">{errors.label}</p>)}
                         </div>
 
-                        {/* ROLE */}
                         <div>
                             <label className="block text-sm font-semibold text-slate-800 mb-2">Role</label>
                                 <div className="flex items-center gap-6 h-[42px]">

@@ -11,6 +11,7 @@ function Header() {
                 <div className="flex items-center gap-4 text-xl">
                     <button className="px-4 py-2 tracking-tight font-bold text-white hover:text-green-600">Add New Track</button>
                     <button className="px-4 py-2 tracking-tight font-bold text-white hover:text-green-600">Tracks</button>
+                    <button className="px-4 py-2 tracking-tight font-bold text-white hover:text-green-600">Details</button>
                 </div>
             </div>
         </nav>
