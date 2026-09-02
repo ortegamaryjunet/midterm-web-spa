@@ -7,7 +7,7 @@ Created a simple "Spotify Track Playlist Manager"
 - Artist Name
 - Rating/BPM (1-100)
 
-## Metadate
+## Metadata
 - Record Label Name
 - User Role (Creator or Listener)
 
