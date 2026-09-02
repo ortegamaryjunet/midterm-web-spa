@@ -1,8 +1,8 @@
 import { flexRender, useTable } from "@tanstack/react-table";
-import { getCoreRowModel} from "@tanstack/react-table/legacy";
+import { getCoreRowModel } from "@tanstack/react-table/legacy";
 import { useState } from "react";
 
-function Table({data}) {
+function Table({data, setSelectedTrack}) {
 
     const [pageIndex, setPageIndex] = useState(0);
     const pageSize = 5;
@@ -40,6 +40,10 @@ function Table({data}) {
         getCoreRowModel: getCoreRowModel(), 
     });
 
+    const handleRowClick=(track)=> {
+        setSelectedTrack(track);
+    }
+
     return (
 
         <div className="bg-[#F4F3FA] px-10 pb-10">
@@ -69,16 +73,20 @@ function Table({data}) {
                             <tbody>
                                 {table.getRowModel().rows.length === 0 ? (
                                     <tr>
-                                        <td colSpan={columns.length} className="px-5 py-10 text-center text-sm text-slate-400">No tracks added yet.</td>
+                                        <td colSpan={columns.length} className="px-5 py-10 text-center text-sm text-slate-400">No tracks added yet</td>
                                     </tr>
                                 ) : (
                                     table.getRowModel().rows.map((row)=>(
-                                        <tr key={row.id} className="border-t border-slate-100 transition hover:bg-emerald-50">
-                                            {row.getVisibleCells().map((cell)=> (
-                                                <td key={cell.id} className="px-5 py-4 text-slate-700">
-                                                    {cell.getValue()}
-                                                </td>
-                                            ))}
+                                        <tr key={row.id} onClick={()=>handleRowClick(row.original)} className="border-t border-slate-100 transition hover:bg-emerald-50">
+
+                                            <td className="px-5 py-4 text-slate-700">{row.original.title}</td>
+
+                                            <td className="px-5 py-4 text-slate-700">{row.original.genre}</td>
+
+                                            <td className="px-5 py-4 text-slate-700">{row.original.artist}</td>
+
+                                            <td className="px-5 py-4 text-slate-700">{row.original.rating}</td>
+
                                         </tr>
                                     ))
                                 )}

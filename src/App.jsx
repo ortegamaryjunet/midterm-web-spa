@@ -9,8 +9,9 @@ function App() {
 
   const[selectedTrack, setSelectedTrack]=useState(null);
   const [tracks, setTracks]=useState([]);
+
   const addTrack = (newTrack)=>{
-    setTracks((prev)=> [...prev, newTrack]);
+    setTracks((prevTracks)=> [...prevTracks, newTrack]);
   };
 
   return (
@@ -19,10 +20,10 @@ function App() {
         <Header/>
 
         <main className="pt-10">
-          
-          <Registration addTrack={addTrack}/>
-          <Table data={tracks} setSelectedTrack={setSelectedTrack}/>
-          <Details track={selectedTrack}/>
+
+          <section id="/"><Registration addTrack={addTrack}/></section>
+          <section id="tracks"><Table data={tracks} setSelectedTrack={setSelectedTrack}/></section>
+          <section id="details"><Details track={selectedTrack}/></section>
           
         </main>
 
